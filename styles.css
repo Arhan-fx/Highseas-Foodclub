@@ -1,7 +1,5 @@
-/* Importing Neonderthaw font */
 @import url('https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap');
 
-/* Basic styles */
 body {
     font-family: Arial, sans-serif;
     background-image: url('pirate-ships-bg.png');
@@ -15,13 +13,12 @@ body {
 
 .title {
     text-align: center;
-    color: #FF1493; /* Neon Pink */
-    font-size: 3rem; /* Increased font size */
-    font-family: 'Neonderthaw', sans-serif; /* Apply Neonderthaw font */
+    color: #FF1493; 
+    font-size: 3rem; 
+    font-family: 'Neonderthaw', sans-serif; 
     text-shadow: 0 0 15px cyan, 0 0 10px magenta;
 }
 
-/* The rest of your CSS remains the same */
 .menu-container {
     text-align: center;
 }
@@ -41,22 +38,22 @@ body {
 }
 
 .food-item img {
-    width: 100%;  /* Make images fit the container */
-    height: 200px; /* Set a fixed height to ensure uniform size */
-    object-fit: cover; /* Ensures the images are cropped properly if necessary */
+    width: 100%;  
+    height: 200px; 
+    object-fit: cover; 
     border-radius: 10px;
 }
 
 .food-item h3 {
-    color: #FFD700; /* Gold */
+    color: #FFD700; 
     margin: 10px 0;
 }
 
-/* Neon Cyan Button */
+
 .food-item button,
 #cart-button,
 button {
-    background-color: #00FFFF; /* Neon Cyan */
+    background-color: #00FFFF; 
     border: none;
     padding: 10px 20px;
     color: black;
@@ -69,10 +66,9 @@ button {
 .food-item button:hover,
 #cart-button:hover,
 button:hover {
-    background-color: #00CED1; /* Darker Neon Cyan */
+    background-color: #00CED1; 
 }
 
-/* Cart Modal */
 .modal {
     display: none;
     position: fixed;
@@ -96,7 +92,7 @@ button:hover {
 }
 
 button {
-    background-color: #FF6347; /* Tomato Red */
+    background-color: #FF6347; 
     border: none;
     padding: 10px;
     color: white;
@@ -108,9 +104,9 @@ button:hover {
     background-color: #D62C1A;
 }
 
-/* Cart Buttons */
+
 .cart-item button {
-    background-color: #32CD32; /* Green */
+    background-color: #32CD32; 
     border: none;
     padding: 5px 15px;
     color: white;
@@ -118,7 +114,7 @@ button:hover {
     cursor: pointer;
 }
 
-/* Hidden class */
+
 .hidden {
     display: none;
 }
