@@ -1,4 +1,3 @@
-// Initialize cart and food items
 let cart = {};
 const foodItems = [
     { name: 'Blackbeard Burger', price: 2.5, image: 'food1.jpg' },
@@ -18,7 +17,6 @@ const foodItems = [
     { name: 'Seafarer\'s Smoothie', price: 2.5, image: 'food15.jpg' }
 ];
 
-// Generate Food Items Dynamically
 const menuContainer = document.querySelector('.menu-items');
 foodItems.forEach((item, index) => {
     const foodElement = document.createElement('div');
@@ -31,7 +29,6 @@ foodItems.forEach((item, index) => {
     menuContainer.appendChild(foodElement);
 });
 
-// Add food to cart
 function addToCart(index) {
     const food = foodItems[index];
     if (!cart[food.name]) {
@@ -41,7 +38,6 @@ function addToCart(index) {
     updateCart();
 }
 
-// Update Cart Modal
 function updateCart() {
     const cartDetails = document.getElementById('cart-details');
     cartDetails.innerHTML = '';
@@ -57,13 +53,11 @@ function updateCart() {
     });
 }
 
-// Increase quantity of an item in cart
 function increaseQuantity(itemName) {
     cart[itemName].quantity += 1;
     updateCart();
 }
 
-// Decrease quantity of an item in cart
 function decreaseQuantity(itemName) {
     if (cart[itemName].quantity > 0) {
         cart[itemName].quantity -= 1;
@@ -71,17 +65,16 @@ function decreaseQuantity(itemName) {
     }
 }
 
-// Show Cart Modal
 document.getElementById('cart-button').addEventListener('click', () => {
     document.getElementById('cart-modal').classList.remove('hidden');
 });
 
-// Close Cart Modal
+
 document.getElementById('close-cart').addEventListener('click', () => {
     document.getElementById('cart-modal').classList.add('hidden');
 });
 
-// Handle Order Now Button
+
 document.getElementById('order-now').addEventListener('click', () => {
     if (Object.keys(cart).length === 0) {
         alert('Please select at least one item to proceed!');
@@ -90,18 +83,18 @@ document.getElementById('order-now').addEventListener('click', () => {
     document.getElementById('payment-section').classList.remove('hidden');
 });
 
-// Payment Handling
+
 document.getElementById('confirm-order').addEventListener('click', () => {
     const paymentMethod = document.getElementById('payment-method').value;
 
-    // Simulate Card Processing Time
+    
     if (paymentMethod === 'card') {
         const processingTime = Math.floor(Math.random() * 10) + 1;
         setTimeout(() => {
             alert('Payment Successful!');
             generateReceipt(paymentMethod);
             document.getElementById('payment-section').classList.add('hidden');
-        }, processingTime * 1000); // Random delay between 1 and 10 seconds
+        }, processingTime * 1000); 
     } else {
         alert('Payment Successful!');
         generateReceipt(paymentMethod);
@@ -109,7 +102,7 @@ document.getElementById('confirm-order').addEventListener('click', () => {
     }
 });
 
-// Generate Receipt
+
 function generateReceipt(paymentMethod) {
     const receiptDetails = document.getElementById('receipt-details');
     let subtotal = 0;
@@ -140,7 +133,7 @@ function generateReceipt(paymentMethod) {
     document.getElementById('receipt-section').classList.remove('hidden');
 }
 
-// Close Receipt Modal
+
 document.getElementById('close-receipt').addEventListener('click', () => {
     document.getElementById('receipt-section').classList.add('hidden');
 });
